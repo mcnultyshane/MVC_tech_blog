@@ -1,5 +1,4 @@
 const router = require('express').Router();
-const sequelize = require('../config/connection')
 const {
     Post,
     User,
@@ -121,3 +120,5 @@ router.get('/create/', withAuth, (req, res) =>{
         res.status(500).json(err);
     }
 });
+
+module.exports = router
