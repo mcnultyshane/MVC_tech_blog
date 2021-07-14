@@ -45,7 +45,7 @@ router.get('/', withAuth, async (req, res) => {
     }
 });
 
-router.get('/edit/:id', withAuth, (req, res) => {
+router.get('/edit/:id', withAuth, async (req, res) => {
     try {
         const dbPostData = await Post.findOne({
             where: {
@@ -87,7 +87,7 @@ router.get('/edit/:id', withAuth, (req, res) => {
     }
 })
 
-router.get('/create/', withAuth, (req, res) =>{
+router.get('/create/', withAuth, async (req, res) =>{
     try {
         const postData = await Post.findAll({
             where: {
