@@ -1,10 +1,10 @@
 const { Model, DataTypes } = require('sequelize');
 const sequelize = require('../config/connection');
 
-class Posts extends Model {}
+class Post extends Model {}
 
 
-Posts.init(
+Post.init(
   {
     id: {
       type: DataTypes.INTEGER,
@@ -16,12 +16,8 @@ Posts.init(
       type: DataTypes.STRING,
       allowNull: false,
     },
-    filename: {
-      type: DataTypes.STRING,
-      allowNull: false,
-    },
-    description: {
-      type: DataTypes.STRING,
+    post_content: {
+      type: DataTypes.TEXT,
       allowNull: false,
     },
     user_id: {
@@ -40,4 +36,4 @@ Posts.init(
   }
 );
 
-module.exports = Painting;
+module.exports = Post;

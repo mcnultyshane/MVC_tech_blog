@@ -11,21 +11,36 @@ Comment.init(
       primaryKey: true,
       autoIncrement: true,
     },
-    name: {
+    comment_text: {
       type: DataTypes.STRING,
       allowNull: false,
+      validate: {
+        len: [1]
+      }
     },
-    contents: {
-        
-
+    post_id: {
+      type: DataTypes.STRING,
+      allowNull: false,
+      references: {
+        model: 'post',
+        key: 'id'
+      }
+    },
+    user_id: {
+      type: DataTypes.STRING,
+      allowNull: false,
+      references: {
+        model: 'user',
+        key: 'id'
+      }
     }
   },
   {
     sequelize,
     freezeTableName: true,
     underscored: true,
-    modelName: 'gallery',
+    modelName: 'comment',
   }
 );
 
-module.exports = Gallery;
+module.exports = Comment;
