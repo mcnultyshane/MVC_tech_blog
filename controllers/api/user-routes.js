@@ -62,12 +62,12 @@ router.post('/', async (req, res) => {
             username: req.body.username,
             email: req.body.email,
             password: req.body.password,
-            github: req.body.github
+            // github: req.body.github
         })
         req.session.save(() => {
             req.session.user_id = userData.id;
             req.session.username = userData.username;
-            req.session.github = userData.github;
+            // req.session.github = userData.github;
             req.session.logged_in = true;
 
             res.json(userData)
@@ -110,7 +110,7 @@ router.post('/login', async (req, res) => {
         req.session.save(() => {
             req.session.user_id = userData.id;
             req.session.username = userData.username;
-            req.session.github = userData.github;
+            // req.session.github = userData.github;
             req.session.logged_in = true;
 
             res.json({

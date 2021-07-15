@@ -23,12 +23,16 @@ router.get('/', withAuth, async (req, res) => {
                     attributes: ['id', 'comment_text', 'post_id', 'user_id', 'created_at'],
                     include: {
                         model: User,
-                        attributes: ['username', 'github']
+                        attributes: ['username'
+                        // , 'github'
+                    ]
                     }
                 },
                 {
                     model: User,
-                    attributes: ['username', 'github']
+                    attributes: ['username'
+                    // , 'github'
+                ]
                 }
             ],
         });
@@ -62,12 +66,16 @@ router.get('/edit/:id', withAuth, async (req, res) => {
                     attributes: ['id', 'comment_text', 'post_id', 'user_id', 'created_at'],
                     include: {
                         model: User,
-                        attributes: ['username', 'github']
+                        attributes: ['username'
+                        // , 'github'
+                    ]
                     }
                 },
                 {
                     model: User,
-                    attributes: ['username', 'github']
+                    attributes: ['username'
+                    // , 'github'
+                ]
                 }
             ]
         });
@@ -104,12 +112,16 @@ router.get('/create/', withAuth, async (req, res) =>{
                     attributes: ['id', 'comment_text', 'post_id', 'user_id', 'created_at'],
                     include: {
                         model: User,
-                        attributes: ['username', 'github']
+                        attributes: ['username'
+                        // , 'github'
+                    ]
                     }
                 },
                 {
                     model: User,
-                    attributes: ['username', 'github']
+                    attributes: ['username'
+                    // , 'github'
+                ]
                 }
             ]
         });
