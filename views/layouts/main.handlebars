@@ -5,13 +5,12 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>The Techno-Chronicles</title>    
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.0/css/bulma.min.css">
+    <link rel="stylesheet" href="../../public/css/styles.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Tourney:wght@300&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.0/css/bulma.min.css">
-    <link rel="stylesheet" href="./styles.css">
-
-    <script defer src="https://use.fontawesome.com/releases/v5.3.1/js/all.js"></script>
+    <script defer src="https://use.fontawesome.com/releases/v5.3.1/js/all.js"></script
 </head>
 
 <div class="wrapper">
@@ -25,22 +24,12 @@
             <button id="logout" class="button is-danger is-inverted">logout</button>
             {{else}}
             <a href="/" class="navbar-item is-hoverable pt-1">homepage</a>
-            <a href="/login" class="button is-darkis-inverted">login</a>
+            <a href="/login" class="button is-success">login</a>
             {{/if}}
         </nav>
     </header>
 
     <main>
-        {{{ body }}}
-        {{#each posts as |post|}}
-
-            {{> post-info post }}
-            </div>
-            
-            {{else}}
-        <h6 class="pb-4 has-text-centered is-italic">there are currently no posts</h6>
-        {{/each}}
-
         {{{ body }}}
     </main>
 
