@@ -37,16 +37,18 @@
     <footer class="footer rows pb-2">
         <div class="row-is-full content has-text-centered">
             <p>
-                <a href="/">homepage</a> |
-                <a href="/dashboard/">dashboard</a> |
-                <a href="/dashboard/create/">create new post</a> | 
-                <a href="/login/">login</a> |
-                <a href="/login/">sign up</a>
+            <a href="/">homepage</a>{{#if loggedIn}} | 
+            <a href="/dashboard/">dashboard</a> | 
+            <a href="/dashboard/create/">create new post</a>
+            {{else}}
+             | <a href="/login/">login</a>
+            {{/if}}
             </p>
         </div>
         <div class="row-is-full content has-text-centered">
             <p>
-                <strong id="title-two">The Techno-Chronicles</strong> hosted by Shane McNulty</a> | styled with <a href="https://bulma.io/">bulma</a> | source code: <a href="https://github.com/mcnultyshane"><i class="fab fa-github"></i></a> | <a href=""><i class="far fa-envelope"></i></a>
+                <strong id="title-two">The Techno-Chronicles</strong> hosted by Shane McNulty</a> | source code: <a href="https://github.com/mcnultyshane"><i class="fab fa-github"></i></a> | <a href=""><i class="far fa-envelope"></i></a>
+                {{!-- | styled with <a href="https://bulma.io/">bulma</a>  --}}
                 {{!-- <a href="https://github.com/mcnultyshane"> --}}
             </p>
         </div>
