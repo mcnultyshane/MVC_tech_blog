@@ -6,7 +6,7 @@ const {
 } = require('../../models');
 const withAuth = require('../../utils/auth');
 
-router.get('/', withAuth, async (req, res) => {
+router.get('/', async (req, res) => {
     try {
         const userData = await User.findAll({
             attributes: {
@@ -58,7 +58,7 @@ router.get('/:id', async (req, res) => {
 
 router.post('/', async (req, res) => {
     try {
-        const userData = await User.Create({
+        const userData = await User.create({
             username: req.body.username,
             email: req.body.email,
             password: req.body.password,
@@ -95,7 +95,7 @@ router.post('/login', async (req, res) => {
                 });
             return;
         }
-
+    
         const validPassword = await userData.checkPassword(req.body.password);
 
         if (!validPassword) {
