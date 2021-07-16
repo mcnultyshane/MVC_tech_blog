@@ -2,7 +2,7 @@
 
 
 ## Description
-
+This is an application that involves the MVC architype for deployed from node.js and mysql a front end application that stores user input into a database
 
 
 ### Table of Contents
@@ -30,7 +30,6 @@ Run the following commands;
 `npm run seed`    
 `npm start`  
 
-A walk though video of the application can be viewed here:[Walkthough Video](),
 ## Guidelines
 
 
