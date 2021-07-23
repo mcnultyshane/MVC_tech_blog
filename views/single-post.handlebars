@@ -1,6 +1,6 @@
 {{> post-info post}}
 
-{{#if loggedIn}}
+{{#if logged_in}}
 <form class="comment-form">
   <div>
     <textarea class="ml-5" name="comment-body"></textarea>
@@ -15,6 +15,6 @@
 
 {{> comment post.comments}}
 
-{{#if loggedIn}}
+{{#if logged_in}}
 <script src="/javascript/comment.js"></script>
 {{/if}}

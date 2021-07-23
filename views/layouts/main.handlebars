@@ -18,7 +18,7 @@
     <header class="has-background-warning">
         <h1 class="has-text-black px-3 py-3 has-text-weight-bold" id="title">The Techno-Chronicles</h1>
         <nav class="navbar has-background-warning mt-2">
-            {{#if loggedIn}}
+            {{#if logged_in}}
             <a href="/" class="navbar-item is-hoverable pt-1">homepage</a>
             <a href="/dashboard" class="navbar-item is-hoverable pt-1">dashboard</a>
             <a href="/dashboard/create/" class="navbar-item is-hoverable pt-1 mr-4">create post</a>
@@ -37,7 +37,7 @@
     <footer class="footer rows pb-2">
         <div class="row-is-full content has-text-centered">
             <p>
-            <a href="/">homepage</a>{{#if loggedIn}} | 
+            <a href="/">homepage</a>{{#if logged_in}} | 
             <a href="/dashboard/">dashboard</a> | 
             <a href="/dashboard/create/">create new post</a>
             {{else}}
@@ -55,7 +55,7 @@
     </footer>
 </div>
 
-{{#if loggedIn}}
+{{#if logged_in}}
 <script src="/javascript/logout.js"></script>
 {{/if}}
 </body>
