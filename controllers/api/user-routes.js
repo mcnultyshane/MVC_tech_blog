@@ -1,8 +1,8 @@
 const router = require('express').Router();
 const {
     User,
-    Movie,
-    Shelf
+    Post,
+    Comment
 } = require('../../models');
 const withAuth = require('../../utils/auth');
 
