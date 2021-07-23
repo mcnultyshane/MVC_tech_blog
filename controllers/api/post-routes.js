@@ -6,7 +6,7 @@ const {
 } = require('../../models')
 const withAuth = require('../../utils/auth');
 
-// get all Users
+// get all posts
 
 router.get('/', async (req, res) => {
     try {
@@ -132,6 +132,26 @@ router.put('/:id', withAuth, async (req, res) => {
     }
 });
 
+router.delete('/:id', withAuth, async (req, res) =>{
+    try {
+        const dbPostData = await Post.destroy({
+            where: {
+                id: req.params.id
+            }
+        })
+        if (!dbPostData) {
+            res.status(404).json({
+                message: 'No post found with this Id.'
+            });
+            return;
+        }
+        res.json(dbPostData)
+    } catch (err) {
+        console.log(err);
+        res.status(500).json(err);
+    }
+    
+});
 
 
 
