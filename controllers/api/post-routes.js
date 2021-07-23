@@ -95,7 +95,7 @@ router.get('/:id', async (req, res) => {
     }
 });
 
-router.post('/:id', withAuth, async (req, res) => {
+router.post('/', withAuth, async (req, res) => {
     try {
         const dbPostData = await Post.create({
             title: req.body.title,
