@@ -6,6 +6,8 @@ const {
 } = require('../../models');
 const withAuth = require('../../utils/auth');
 
+
+// Get /api/users
 router.get('/', async (req, res) => {
     try {
         const userData = await User.findAll({
@@ -21,6 +23,41 @@ router.get('/', async (req, res) => {
 });
 
 
+// GET /api/user/1
+router.get('/:id', async (req, res) => {
+    try {
+        const userData = await User.findOne({
+            attributes: {
+                exclude: ['password']
+            },
+            where: {
+                id: req.params.id
+            },
+            include: [{
+                    model: Post,
+                    attributes: ['id', 'title', 'post_content', 'created_at']
+                },
+                {
+                    model: Comment,
+                    attributes: ['id', 'comment_text', 'created_at'],
+                    include: {
+                        model: Post,
+                        attributes: ['title']
+                    }
+                }
+            ]
+        })
+        if (!userData) {
+            res.status(404).json({
+                message: 'No user found with that id.'
+            })
+        }
+        res.json(userData);
+    } catch (err) {
+        console.log(err);
+        res.status(500).json(err);
+    }
+});
 
 router.post('/', async (req, res) => {
     try {
@@ -61,7 +98,7 @@ router.post('/login', async (req, res) => {
                 });
             return;
         }
-    
+
         const validPassword = await userData.checkPassword(req.body.password);
 
         if (!validPassword) {
