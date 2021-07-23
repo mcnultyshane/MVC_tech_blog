@@ -35,7 +35,7 @@ Comment.init({
     // validate: {
     //   len: [1]
     // }
-  }
+  }, 
 }, {
   sequelize,
   freezeTableName: true,

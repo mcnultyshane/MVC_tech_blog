@@ -28,15 +28,15 @@ router.get('/', async (req, res) => {
                     include: {
                         model: User,
                         attributes: ['username'
-                        // , 'github'
-                    ]
+                            // , 'github'
+                        ]
                     }
                 },
                 {
                     model: User,
                     attributes: ['username'
-                    // , 'github'
-                ]
+                        // , 'github'
+                    ]
                 },
             ]
         })
@@ -65,21 +65,21 @@ router.get('/:id', async (req, res) => {
             include: [
                 // Comment model here -- attached username to comment
                 {
+                    model: User,
+                    attributes: ['username'
+                        // , 'github'
+                    ]
+                }, {
                     model: Comment,
                     attributes: ['id', 'comment_text', 'post_id', 'user_id', 'created_at'],
                     include: {
                         model: User,
                         attributes: ['username'
-                        // , 'github'
-                    ]
+                            // , 'github'
+                        ]
                     }
                 },
-                {
-                    model: User,
-                    attributes: ['username'
-                    // , 'github'
-                ]
-                },
+
             ]
         })
         if (!dbPostData) {
