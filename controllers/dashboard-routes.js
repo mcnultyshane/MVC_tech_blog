@@ -88,7 +88,7 @@ router.get('/edit/:id', withAuth, async (req, res) => {
     
         res.render('edit-post', {
             post,
-            loggedIn: true
+            logged_in: true
         });
     } catch (err) {
         res.status(500).json(err);
@@ -126,7 +126,7 @@ router.get('/create/', withAuth, async (req, res) =>{
             ]
         });
         const posts = postData.map(post => post.get({ plain: true}));
-        res.render('create-post', { posts, loggedIn: true });
+        res.render('create-post', { posts, logged_in: true });
     } catch (err) {
         console.log(err);
         res.status(500).json(err);
