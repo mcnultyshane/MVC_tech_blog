@@ -14,10 +14,10 @@ router.get('/', async (req, res) => {
     }
 });
 
-router.post('/', withAuth, async (res, req) => {
-    try {
+router.post('/', withAuth, async (req, res) => {
+    try { console.log('i am here');
         if (req.session) {
-
+            console.log('i am here2');
             const enteredComment = await Comment.create({
                 comment_text: req.body.comment_text,
                 post_id: req.body.post_id,

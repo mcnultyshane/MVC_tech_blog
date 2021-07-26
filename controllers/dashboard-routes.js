@@ -98,36 +98,38 @@ router.get('/edit/:id', withAuth, async (req, res) => {
 
 router.get('/create/', withAuth, async (req, res) =>{
     try {
-        const postData = await Post.findAll({
-            where: {
-                id: req.params.id
-            },
-            attributes: [
-                'id',
-                'title',
-                'created_at',
-                'post_content'
-            ],
-            include: [{
-                    model: Comment,
-                    attributes: ['id', 'comment_text', 'post_id', 'user_id', 'created_at'],
-                    include: {
-                        model: User,
-                        attributes: ['username'
-                        // , 'github'
-                    ]
-                    }
-                },
-                {
-                    model: User,
-                    attributes: ['username'
-                    // , 'github'
-                ]
-                }
-            ]
-        });
+        const postData = await Post.findAll({});
+    //         where: {
+    //             id: req.params.id
+    //         },
+    //         attributes: [
+    //             'id',
+    //             'title',
+    //             'created_at',
+    //             'post_content'
+    //         ],
+    //         include: [{
+    //                 model: Comment,
+    //                 attributes: ['id', 'comment_text', 'post_id', 'user_id', 'created_at'],
+    //                 include: {
+    //                     model: User,
+    //                     attributes: ['username'
+    //                     // , 'github'
+    //                 ]
+    //                 }
+    //             },
+    //             {
+    //                 model: User,
+    //                 attributes: ['username'
+    //                 // , 'github'
+    //             ]
+    //             }
+    //         ]
+    //     });
         const posts = postData.map(post => post.get({ plain: true}));
-        res.render('create-posts', { posts, logged_in: true });
+        res.render('create-posts'
+        // , { posts, logged_in: true }
+        );
     } catch (err) {
         console.log(err);
         console.log("THIS ERROR IS THE ONE YOU SEE");
