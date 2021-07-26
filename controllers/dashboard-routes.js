@@ -45,6 +45,7 @@ router.get('/', withAuth, async (req, res) => {
             logged_in: req.session.logged_in
         });
     } catch (err) {
+        console.log("NO IT'S THIS ONE");
         res.status(500).json(err);
     }
 });
@@ -126,9 +127,10 @@ router.get('/create/', withAuth, async (req, res) =>{
             ]
         });
         const posts = postData.map(post => post.get({ plain: true}));
-        res.render('create-post', { posts, logged_in: true });
+        res.render('create-posts', { posts, logged_in: true });
     } catch (err) {
         console.log(err);
+        console.log("THIS ERROR IS THE ONE YOU SEE");
         res.status(500).json(err);
     }
 });

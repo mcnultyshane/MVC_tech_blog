@@ -6,11 +6,13 @@ const {
 } = require('../../models')
 const withAuth = require('../../utils/auth');
 
-// get all posts
+// GET api/posts/ -- get all posts
 
 router.get('/', async (req, res) => {
     try {
         const dbPostData = await Post.findAll({
+            // Query Configuration
+            // From the post table, include the post ID, title, and the timestamp of creation.
             attributes: [
                 'id',
                 'title',
@@ -18,6 +20,7 @@ router.get('/', async (req, res) => {
                 'post_content'
             ],
             order: [
+                // order the posts from the most recent to least
                 ['created_at', 'DESC']
             ],
             include: [
@@ -40,7 +43,9 @@ router.get('/', async (req, res) => {
                 },
             ]
         })
+        // return the posts
         res.json(dbPostData)
+        // if there was an error, return the error
     } catch (err) {
         console.log(err);
         res.status(500).json.err
