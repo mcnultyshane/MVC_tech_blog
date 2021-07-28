@@ -1,9 +1,7 @@
-# MVC_tech_blog
-
+# MVC Tech Blog
 
 ## Description
-This is an application that involves the MVC architype for deployed from node.js and mysql a front end application that stores user input into a database
-
+'Techno Chronicles' is a CMS-style blog site that uses Model View Controller.  A mysql database is supporting the site and the application uses Express, Sequelize, Bulma, dotenv and Handlebars.  
 
 ### Table of Contents
 
@@ -14,21 +12,10 @@ This is an application that involves the MVC architype for deployed from node.js
 
 ## Installation 
 
-Installation is a process of installing the dependencies required.
-Intialize node package manager and then run the following commands;  
-`npm install mysql2`   
-`npm install sequelize`   
-`npm install dotenv`   
 
 ## Usage 
+[MVC Tech Blog Walkthrough](https://drive.google.com/file/d/1UDXPNPZX481FAe4EMzk604PRbR97PTkO/view)
 
- In order to use the application, first ensure that MySQL is installed in your environment.    
- Then, from the project root folder enter the sql shell and run the following command:          
-`source db/schema.sql`        
-Exit the sql shell and return to the command line still within your root project folder.      
-Run the following commands;          
-`npm run seed`    
-`npm start`  
 
 ## Guidelines
 
