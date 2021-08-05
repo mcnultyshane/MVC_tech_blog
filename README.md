@@ -14,6 +14,10 @@
 
 
 ## Usage 
+Click <a href="https://tech-blog--s.herokuapp.com/" target="_blank">here</a> to see the deployed site. 
+<br>
+<img src='./images/homepage-screencapture.jpg' style="width:800px;" alt='app screenshot'>
+
 [MVC Tech Blog Walkthrough](https://drive.google.com/file/d/1UDXPNPZX481FAe4EMzk604PRbR97PTkO/view)
 
 
